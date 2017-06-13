@@ -29,7 +29,7 @@
 	"image url":	       "//static.laurencemorgan.co.uk/images/",
 	"static content url":  "//static.laurencemorgan.co.uk/",
 	"writable url":		"//laurencemorgan.co.uk/uploads/",
-	"writable path":	"/srv/http/www.laurencemorgan.co.uk/uploads/",
+	"writable path":	"/uploads/",
 	
 	// Path for templates. Doesn't need to be in doc root
 	// zero length string == read from database

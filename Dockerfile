@@ -13,6 +13,12 @@ RUN go get -t -u golang.org/x/net/websocket
 # Compile the backend code
 RUN go install github.com/lmorg/laurencemorgan.co.uk/level10fireball
 
+# Uploads directory
+RUN mkdir /uploads
+
+# Make the site read-only aside the uploads path
+RUN chmod -R ugo-w /go/src/github.com/lmorg/laurencemorgan.co.uk
+
 # Start webserver
 ENTRYPOINT /go/bin/level10fireball --conf /go/src/github.com/lmorg/laurencemorgan.co.uk/site/conf
 
