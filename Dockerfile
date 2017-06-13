@@ -2,13 +2,14 @@ FROM golang
 
 # Pull this repo
 RUN mkdir -p /go/src/github.com/lmorg
-RUN git clone https://github.com/lmorg/laurencemorgan.co.uk /go/src/github.com/lmorg/laurencemorgan.co.uk
+ADD . /go/src/github.com/lmorg/laurencemorgan.co.uk
 
 # Get Go dependancies
 RUN go get -t -u github.com/go-sql-driver/mysql
 RUN go get -t -u github.com/nfnt/resize
 RUN go get -t -u golang.org/x/crypto/scrypt
 RUN go get -t -u golang.org/x/net/websocket
+RUN go get -t -u github.com/kardianos/osext
 
 # Compile the backend code
 RUN go install github.com/lmorg/laurencemorgan.co.uk/level10fireball

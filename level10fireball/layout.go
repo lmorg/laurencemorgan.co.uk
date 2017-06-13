@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"fmt"
 	"html"
-	"level10fireball/fmtd"
+	"github.com/lmorg/laurencemorgan.co.uk/level10fireball/fmtd"
 	"math"
 	"math/rand"
 	"net/http"

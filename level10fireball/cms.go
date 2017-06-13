@@ -4,7 +4,7 @@ package main
 import (
 	"fmt"
 	"html"
-	"level10fireball/gallery"
+	"github.com/lmorg/laurencemorgan.co.uk/level10fireball/gallery"
 	"math/rand"
 	"regexp"
 	"strconv"

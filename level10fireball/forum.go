@@ -4,7 +4,7 @@ package main
 import (
 	"fmt"
 	"html"
-	"level10fireball/fmtd"
+	"github.com/lmorg/laurencemorgan.co.uk/level10fireball/fmtd"
 	"math"
 	"strconv"
 	"strings"
