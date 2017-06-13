@@ -17,8 +17,8 @@ import (
 const (
 	CMS_NAME      string = "Level 10 Fireball"
 	CMS_URL       string = "http://h4ck.in"
-	CMS_VERSION   string = "1.3.5200 ALPHA"
-	CMS_COPYRIGHT string = "© Laurence 2012-2016"
+	CMS_VERSION   string = "1.4.5201 ALPHA"
+	CMS_COPYRIGHT string = "© Laurence 2012-2017"
 )
 
 ////////////////////////////////////////////////////////////////////////////////

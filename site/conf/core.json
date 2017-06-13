@@ -1,109 +1,96 @@
 "core": {
 	// WARNING, DO NOT EDIT UNLESS YOU KNOW WHAT YOU'RE DOING!
 	// Many of these values require changes to field lengths on the database as well.
-	
+
 	// number of hours per token (roughly equates to double because of the lazy cheat I'm using)
-	"TOKEN_AGE": 24,
-	
-	// 0 == keep default assigned by Golang
-	"GO_MAX_PROCS": 4,
-	
+	"token age": 24,
+
+	// 0 == keep default assigned by Golang (recommended)
+	"max os threads": 0,
+
 	// cache control HTTP headers - not adviceable to have above 0 since this is a dynamic website
-	"CACHE_CONTROL" : 0,
-	
+	"cache control" : 0,
+
 	// how long to cache DB results for before refresh (cache is also updated dynamically along with the database so single node systems can get away with a higher cache - albeit at cost to more RAM being consumed)
 	//60 * 5
-	"DB_CACHE_TIMEOUT": 0,
-	
+	"db cache timeout": 0,
+
 	// how long to cache user list. In seconds
-	// 60 * 15
-	"USER_CACHE_TIMEOUT": "60 * 15",
-	
+	"user cache timeout": ${ = 60 * 15 },
+
 	// how long to cache disk files when running in web server mode
-	"DISK_CACHE_TIMEOUT": "60 * 60 * 24",
-	
+	//"disk cache timeout": ${ = 60 * 60 * 24 },
+	"disk cache timeout": 0,
+
 	// max size of disk cache (bytes) - this is only an approximation, sizes will raise if requests are made before the webserver cache clean up executes
-	"DISK_CACHE_LIMIT": "1024 * 1024 * 1024 * 2",
-	
+	//"disk cache limit": ${ = 1024 * 1024 * 256 },
+	"disk cache limit": ${ = 1024 * 1024 * 256 },
+
 	// how frequently to run the cache purger (every n seconds)
-	"DISK_CACHE_PURGER": 60,
-	
+	"disk cache purger": 60,
+
 	// cookie age for sessions (timeout)
-	"SESSION_AGE": "60 * 60 * 24 * 30",
-	
+	"session cookie age": ${ = 60 * 60 * 24 * 30 },
+
 	// cookie age for platform preference (timeout)
-	"PLATFORM_PREF_AGE": "60 * 60 * 24 * 30",
-	
+	"platform preference cookie age": ${ = 60 * 60 * 24 * 30 },
+
 	// i cheat by using a referrer cookie. Can be disabled though - if it is, fallback to ref HTTP header then SITE_HOME_URL if header doesn't exist
-	"REFERRER_COOKIE": true,
-	
+	"use referrer cookie": true,
+
 	// how long to remember the referrer url (if enabled)
-	"REFERRER_AGE": "60 * 60 * 24",
-	
+	"referrer cookie age": ${ = 60 * 60 * 24 },
+
 	// database field lengths
-	"USERNAME_MIN_CHARS": 3,
-	"USERNAME_MAX_CHARS": 15,
-	"PASSWORD_MIN_CHARS": 6,
-	"PASSWORD_MAX_CHARS":50,
-	"EMAIL_MAX_CHARS": 255,
-	"TWITTER_MAX_CHARS": 15,
+	"username min characters":	3,
+	"username max characters":	15,
+	"password min characters":	6,
+	"password max characters":	50,
+	"email max characters":		255,
+	"twitter max characters":	15,
 
 	// what to crop the user agent to in the DB (this will still be logged via STDOUT)
-	"USER_AGENT_CROP": 200,
-	
+	"user agent db crop": 200,
+
 	//what to crop the source URL to in URL forums
-	"SOURCE_URL_CROP": 50,
-	
+	"source url crop": 50,
+
 	// email a required field for sign up?
-	"REG_EMAIL_REQUIRED": true,
-	
+	"registration requires email": false,
+
 	// twitter a required field for sign up?
-	"REG_TWITTER_REQUIRED": false,
-	
+	"registration requires twitter": false,
+
 	// min characters per post (1 == suggested minimum)
-	"POST_MIN_CHARS": 1,
-	
+	"post min characters": 1,
+
 	// max characters per post
-	"POST_MAX_CHARS": 10000,
-	
+	"post max characters": 10000,
+
 	// min characters for thread titles (encourages better titles)
-	"THREAD_TITLE_MIN_C": 5,
-	
+	"thread title min characters": 5,
+
 	// max characters for thread titles
-	"THREAD_TITLE_MAX_C": 100,
-	
+	"thread title max characters": 100,
+
 	// max characters for thread link URLs (link aggregate mode)
-	"THREAD_LINK_URL_MAX_C": 255,
-	
+	"thread link url max characters": 255,
+
 	// min characters per link description
-	"THREAD_LINK_DESC_MIN_C": 5,
-	
+	"thread link desc min characters": 5,
+
 	// max characters per link description
-	"THREAD_LINK_DESC_MAX_C": 500,
-	
+	"thread link desc max characters": 500,
+
 	// max characters per link content type
-	"THREAD_LINK_CT_MAX_C": 100,
-	
+	"thread link content type max characters": 100,
+
 	// max number of comments nested in one view (threaded)
-	"MAX_COMMENT_NEST": 9,
-	
-	// enable or disable shell execute. Disabled (false) is more secure, but breaks external minification
-	"ENABLE_SYS_EXEC": false,
-	
-	// allow or disallow robots from crawling your site
-	"ALLOW_ROBOTS": false,
-	
-	// allow or disallow users to register
-	"ALLOW_REGISTRATION": true,
-	
-	// minify output HTML - desktop / mobile
-	"MINIFY_DESKTOP": false,
-	"MINIFY_MOBILE": true,
-	
-	// application for minification || blank == don't minify.
-	// use "$file" as a variable for the CSS or JS file. For example:
-	"MINIFY_JS_CSS": "/usr/bin/yui-compressor $file",
-	//"MINIFY_JS_CSS": "",
-    
-    #include "appearance.json"
+	"max nested comments": 9,
+
+	// real time updates via websockets
+	"websockets desktop": true,
+	"websockets mobile": true,
+
+	#include "appearance.json"
 }

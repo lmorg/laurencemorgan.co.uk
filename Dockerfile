@@ -18,9 +18,9 @@ RUN go install github.com/lmorg/laurencemorgan.co.uk/level10fireball
 RUN mkdir /uploads
 
 # Make the site read-only aside the uploads path
-RUN chmod -R ugo-w /go/src/github.com/lmorg/laurencemorgan.co.uk
+#RUN chmod -R ugo-w /go/src/github.com/lmorg/laurencemorgan.co.uk
 
 # Start webserver
-ENTRYPOINT /go/bin/level10fireball --conf /go/src/github.com/lmorg/laurencemorgan.co.uk/site/conf
+ENTRYPOINT /go/bin/level10fireball --conf /go/src/github.com/lmorg/laurencemorgan.co.uk/site/conf/
 
 EXPOSE 8080
