@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+/*@font-face {
+    font-family: DOS;
+    src: font-cdn('Fixedsys500c.eot');
+    src: local('☺'),
+         font-cdn('Fixedsys500c.woff') format('woff'),
+         font-cdn('Fixedsys500c.ttf')  format('truetype'),
+         font-cdn('Fixedsys500c.svg')  format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+//.dos {
+//	font-family: DOS;
+//	white-space: pre-wrap;       /* css-3 */
+//	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+//	white-space: -pre-wrap;      /* Opera 4-6 */
+//	white-space: -o-pre-wrap;    /* Opera 7 */
+//	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+//	//text-overflow: ellipsis;
+//}
+
+@font-face {
+    font-family: 'AndBasR';
+	src: font-cdn('CandelaBook-webfont.eot');
+	src: font-cdn('CandelaBook-webfont.eot?#iefix') format('embedded-opentype'),
+		 font-cdn('CandelaBook-webfont.woff') format('woff'),
+		 font-cdn('CandelaBook-webfont.ttf') format('truetype'),
+		 font-cdn('CandelaBook-webfont.svg#candelabook') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'inconsolatamedium';
+    src: url('inconsolata-webfont.eot');
+    src: url('inconsolata-webfont.eot?#iefix') format('embedded-opentype'),
+         url('inconsolata-webfont.woff2') format('woff2'),
+         url('inconsolata-webfont.woff') format('woff'),
+         url('inconsolata-webfont.ttf') format('truetype'),
+         url('inconsolata-webfont.svg#inconsolatamedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*
+@font-face {
+    font-family: 'SourceCodeProRegular';
+    src: font-cdn('SourceCodePro-Regular-webfont.eot');
+    src: font-cdn('SourceCodePro-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-cdn('SourceCodePro-Regular-webfont.woff') format('woff'),
+         font-cdn('SourceCodePro-Regular-webfont.ttf') format('truetype'),
+         font-cdn('SourceCodePro-Regular-webfont.svg#SourceCodeProRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+/*
+@font-face {
+    font-family: "UbuntuMono";
+    src: font-cdn("UbuntuMono-R.eot?") format("eot"), 
+         font-cdn("UbuntuMono-R.woff") format("woff"),
+         font-cdn("UbuntuMono-R.ttf")  format("truetype"),
+         font-cdn("UbuntuMono-R.svg#UbuntuMono-Regular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+@font-face {
+    font-family: 'DeliciousItalic';
+    src: font-cdn('delicious-italic-webfont.eot');
+    src: font-cdn('delicious-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-cdn('delicious-italic-webfont.woff') format('woff'),
+         font-cdn('delicious-italic-webfont.ttf') format('truetype'),
+         font-cdn('delicious-italic-webfont.svg#DeliciousItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

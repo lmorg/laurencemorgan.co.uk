@@ -1,0 +1,15 @@
+"daemon": {
+
+	// DAEMON CONFIG
+
+	// set user id and group id
+	"enable setuid": false,
+	"user id":	33,
+	"group id":	33,
+
+	// experimental and requires Level 10 Fireball to be compiled with cgo disabled
+	// else hostname lookups will fail.
+	"enable chroot": false,
+	"chroot dir": ""
+
+}

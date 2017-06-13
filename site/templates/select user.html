@@ -1,0 +1,10 @@
+<div id="ul_to" class="blur">
+    <input type="text" id="ul_input" class="textbox w100 ul_input" placeholder="Type username, then select from drop down menu" 
+		   onkeyup="updateUserList();"  
+		   onfocus="delClass('ul_to','blur');addClass('ul_to','focus');"
+		   onblur="delClass('ul_to','focus');addClass('ul_to','blur');"
+	/>
+    <div id="ul_users"></div>
+</div>
+
+<script>var uls = [];</script>

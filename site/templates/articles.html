@@ -1,0 +1,25 @@
+        <_h1|1><_page|title><_h1>
+
+        <_layout|breadcrumb|home|all topics|topic>
+
+        <div>
+
+            <_articles|begin>
+
+                <div id="lt_div_<_article|id>" class="lt_layout lt_motif lt_float<_article|placement> lt_watermark<_topic|id>"
+                    onmouseover="addClass('lt_div_<_article|id>','lt_hover'); addClass('lt_p_<_article|id>','a_hover')"
+                    onmouseout="delClass('lt_div_<_article|id>','lt_hover'); delClass('lt_p_<_article|id>','a_hover')"
+                    onclick="window.location.href='<_article|url>'">
+
+                    <a href="<_article|url>" title="<_article|title>"><h2><_article|title></h2><p id="lt_p_<_article|id>" class="lt_summary">
+                    <_article|description></p></a>
+                    <div class="lt_fadeout"></div>
+                </div>
+
+            <_articles|end>
+
+            <div class="clear"></div>
+
+            <_pagination>
+
+        </div>

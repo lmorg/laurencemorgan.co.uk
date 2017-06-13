@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+$image-version: "2.0";  // increment when CSS import images are updated
+$image-cdn: "//static.laurencemorgan.co.uk/images"; // no trailing space required
+
+$font-cdn: "//laurencemorgan.co.uk/layout/fonts"; // no trailing space required
+
+$font-headings: Nunito, AndBasR, "open sans", Helvetica, sans-serif;
+$font-regular:	AndBasR, "open sans", Helvetica, sans-serif;
+$font-bold:		AndBasR, "open sans", Helvetica, sans-serif;
+$font-italic:	DeliciousItalic, "Trebuchet MS", Helvetica, sans-serif;
+//$font-fixed:	SourceCodeProRegular, Monaco, monospace;
+$font-fixed:	inconsolatamedium, Monaco, monospace;
+
+////////////////////
+// colour schemes //
+////////////////////
+
+// articles and main site preferences
+//$color-background:#e5e5f0;
+//$color-background:#f0f0ff;
+$color-background:#f3f3f3;
+$color-title:	#151c36;
+$color-text: 	#101320;
+$color-link: 	#0039ba;
+$color-hover:	#9B251B;
+$color-active:	#9B251B;
+$color-error:	#aa0000;
+$color-list: 	#323050;
+$color-code: 	#003030;
+
+// table colors
+$color-row-hover:	#ffe0e0;
+$color-row-new-1:	#daeada;
+$color-row-new-2:	#d0e0d0;
+
+// comment colors
+$color-comment-me:	#d6d9a0;
+$color-comment-new:	#c3d3c3;
+$color-comment-other: #e0e0e0;
+
+// bespoke stuff
+$desktop-borders: #606060;

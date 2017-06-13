@@ -1,0 +1,48 @@
+"site": {
+
+	"name":		"Laurence Morgan",
+	"description":	"The unsorted inane drivelings of the aforementioned",
+	"copyright":	"© Laurence 2012-2015",
+	"version":	"2.0.2",
+	
+	// best practice, listen on localhost, and then forward requests via Apache reverse proxy or load balancer
+	"host":		"127.0.0.1",
+	
+	// HTTP (non SSL/TLS)
+	// best practice, run as non-root with port > 1024, then reverse proxy from Apache / etc
+	"http enable":	true,
+	"http port":	8000,
+
+	// HTTPS (SSL/TLS)
+	// TODO: not working yet. probably best to run without TLS on localhost and reverse proxy to enable HTTPS
+	"tls enable":	false,
+	"tls port":	8081,
+	"tls key":	"/srv/certs/www.h4ck.in.key",
+	"tls cert":	"/srv/certs/www.h4ck.in.crt",
+	
+	// Address for home page
+	// always append with a backslash
+	"home url":	"http://laurencemorgan.co.uk/",
+	
+	// URLs for non-dynamically generated content
+	// (these can be hosted on CDN if desired)
+	"image url":	       "//static.laurencemorgan.co.uk/images/",
+	"static content url":  "//static.laurencemorgan.co.uk/",
+	"writable url":		"//laurencemorgan.co.uk/uploads/",
+	"writable path":	"/srv/http/www.laurencemorgan.co.uk/uploads/",
+	
+	// Path for templates. Doesn't need to be in doc root
+	// zero length string == read from database
+	"templates path":	"/srv/http/www.laurencemorgan.co.uk/templates/",
+	// Path for config. Doesn't need to be in doc root
+	"config path":		"/srv/http/www.laurencemorgan.co.uk/conf/",
+	"web content path":	"/srv/http/www.laurencemorgan.co.uk/",
+	
+	// Run as a web server rather than proxied behind Apache / nginx / etc
+	"web server mode":	true,
+
+	// cookie settings
+	"cookie domain":	"laurencemorgan.co.uk",
+	// always append with a backslash
+	"cookie home path":	"/"
+}

@@ -1,0 +1,7 @@
+{
+    #include "core.json",
+    #include "daemon.json",
+    #include "file types.json",
+    #include "site.json",
+    #include "database.json"
+}

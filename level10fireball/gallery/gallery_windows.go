@@ -1,0 +1,3 @@
+package gallery
+
+const SLASH = `\`

@@ -1,0 +1,108 @@
+"file types": [
+
+	// images
+	{
+		"extension":	"gif",
+		"mime": 		"image/gif",
+		"expires": 		62208000,
+		"gzip": 		false
+	},
+	{
+		"extension":	"png",
+		"mime":			"image/png",
+		"expires":		62208000,
+		"gzip":			false
+	},
+	{
+		"extension":	"jpg",
+		"mime":			"image/jpeg",
+		"expires":		62208000,
+		"gzip":			false
+	},
+	{
+		"extension":	"jpeg",
+		"mime":			"image/jpeg",
+		"expires":		62208000,
+		"gzip":			false
+	},
+	{
+		"extension":	"ico",
+		"mime":			"image/vnd.microsoft.icon",
+		"expires":		62208000,
+		"gzip":			false
+	},
+	{
+		"extension":	"svg",
+		"mime":			"image/svg+xml",
+		"expires":		62208000,
+		"gzip":			true
+	},
+
+	// type faces
+	{
+		"extension":	"ttf",
+		"mime":			"application/font-sfnt",
+		"expires":		62208000,
+		"gzip":			true
+	},
+	{
+		"extension":	"otf",
+		"mime":			"application/font-sfnt",
+		"expires":		62208000,
+		"gzip":			true
+	},
+	{
+		"extension":	"woff",
+		"mime":			"application/font-woff",
+		"expires":		62208000,
+		"gzip":			false
+	},
+	{
+		"extension":	"woff2",
+		"mime":			"application/font-woff2",
+		"expires":		62208000,
+		"gzip":			false
+	},
+	{
+		"extension":	"eot",
+		"mime":			"application/vnd.ms-fontobject",
+		"expires":		62208000,
+		"gzip":			true
+	},
+
+	// text-based data
+	{
+		"extension":	"js",
+		"mime":			"text/javascript",
+		"expires":		1209600,
+		"gzip":			true
+	},
+	{
+		"extension":	"css",
+		"mime":			"text/css",
+		"expires":		1209600,
+		"gzip":			true
+	},
+	{
+		"extension":	"txt",
+		"mime":			"text/plain",
+		"expires":		1209600,
+		"gzip":			true
+	},
+	{
+		"extension":	"xml",
+		"mime":			"text/xml",
+		"expires":		1209600,
+		"gzip": 		true
+	},
+
+	// miscellaneous
+	{
+		"extension":	"pdf",
+		"mime":			"application/pdf",
+		"expires":		62208000,
+		"gzip":			false
+	}
+
+
+]

@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+.menubar-item {
+    @include border-radius(15px);
+    //@include box-shaddow(0px, 0px, 2px, white);
+    //border-color: $color-hover;
+    //border-color: #f2f2f2;
+    //border-color: #e5e5f0;
+    border-color: $desktop-borders;
+    border-width: 1px;
+    border-style: solid;
+    height: 20px;
+    margin: 0px;
+    padding: 5px 2px 5px 12px;
+    background-color: #f2f2f2;
+    text-shadow: none;
+}
+
+//.menubar-item {
+//    border-color: $color-hover;
+//}
+
+#menubar {
+	font-size:15px;
+	clear:both;
+	font-weight: bolder;
+	//text-shadow: 1px 1px 2px $color-link;
+	-webkit-font-smoothing: antialiased;
+	/*font-smooth: always;*/
+
+	background: $color-background;
+
+	//color: $color-text;
+	text-align: center;
+
+	width:900px;
+    
+    height: auto;
+    //padding: 5px 0px 5px 0px;
+    margin-top: 10px;
+    margin-bottom: -20px;
+    
+	//height:22px;
+	/*	background: $color-title;*/
+	letter-spacing: 1px;
+}
+
+#menubar a:link, #menubar a:visited {
+    color: $desktop-borders;
+	text-shadow: 0px 0px 1px $desktop-borders;
+    //text-shadow: none;
+	text-decoration:none;
+}
+
+#menubar a:hover{
+	color:$color-hover;
+	text-decoration:none;
+	text-shadow: 0px 0px 1px $color-hover;
+}

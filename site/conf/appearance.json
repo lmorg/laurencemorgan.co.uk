@@ -1,0 +1,9 @@
+    // more core settings, but related to the appearance for the site
+    
+    "avatar small width":	75,
+	"avatar small height":	75,
+	"avatar large width":	300,
+	"avatar large height":	300,
+    
+    "date format article":	"Monday, 02-Jan-06 @ 15:04 (MST)",
+	"date format thread":	"02-Jan-06 @ 15:04"

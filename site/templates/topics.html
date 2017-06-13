@@ -1,0 +1,33 @@
+        <_h1|1>Topics<_h1>
+
+        <_layout|breadcrumb|home|all topics>
+
+        <div>
+
+        <_topics|begin>
+
+        <div id="lt_div_<_topic|id>" class="lt_layout lt_motif lt_float<_topic|placement> lt_watermark<_topic|id>"
+            onmouseover="addClass('lt_div_<_topic|id>','lt_hover'); addClass('lt_p_<_topic|id>','topics_hover')"
+                    onmouseout="delClass('lt_div_<_topic|id>','lt_hover'); delClass('lt_p_<_topic|id>','topics_hover')">
+                <div title="<_topic|title>" onclick="window.location.href='<_topic|url>'">
+
+                    <a href="<_topic|url>" title="<_topic|description>"><h2><_topic|title></h2>
+                    </a><p id="lt_p_<_topic|id>" class="topics"><_topic|description></p>
+                </div>
+
+                <_articles|begin>
+                    <div id="lt_top_arts_<_article|id>" class="lt_top_arts"
+                        onmouseover="addClass('lt_top_arts_<_article|id>','lt_top_arts_h'); addClass('lt_ta_<_article|id>','lt_ta_h')"
+                        onmouseout="delClass('lt_top_arts_<_article|id>','lt_top_arts_h'); delClass('lt_ta_<_article|id>','lt_ta_h')"
+                        onclick="window.location.href='<_article|url>'">
+
+                        <a href="<_article|url>" title="<_article|description>"><span id="lt_ta_<_article|id>"><_article|title></span></a>
+                    </div>
+                <_articles|end>
+
+                <div class="lt_more"><a href="<_topic|url>" title="<_topic|title>">...more...</a></div>
+            </div>
+
+        <_topics|end>
+
+        </div>

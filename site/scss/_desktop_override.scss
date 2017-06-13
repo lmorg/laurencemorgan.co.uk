@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+body {
+	background: $color-background;
+	overflow-y: scroll;
+}
+
+#border {
+	width: auto;
+	margin-left: auto ;
+	margin-right: auto ;
+	background: $color-background;
+	-moz-box-shadow:    none;
+	-webkit-box-shadow: none;
+	box-shadow:         none;
+
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-o-border-radius: 0px;
+	-webkit-border-topleft: 0px;
+}
+
+#page {
+	margin-top: 0px;
+	padding-top: 0px;
+	top: 0px;
+}
+
+.mainbody {
+	text-shadow: none;
+	-moz-text-shadow: none;
+	-o-text-shadow: none;
+	-webkit-text-shadow: none;
+}
+
+.lt_watermark1, .lt_watermark2, .lt_watermark3, .lt_watermark4, .lt_watermark5, .lt_watermark6 {
+//    opacity: 0.8;
+//    filter: alpha(opacity=80); /* For IE8 and earlier */
+	background-color: $color-background;
+}
+
+#alt_bg {
+	position: absolute;
+	left: 0px;
+	top: 8px;
+	height: 196px;
+	width: 100%;
+	background-color:$color-background;
+	background-image:image-cdn("layout/wall.jpg");
+	background-repeat: repeat;
+	background-attachment: fixed;
+	border-top-color: $desktop-borders;
+	border-bottom-color: $desktop-borders;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+}
+
+#leftabit {
+	//position: relative;
+	//float: left;
+	left: -100px;
+}

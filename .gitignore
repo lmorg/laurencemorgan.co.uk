@@ -1,0 +1,11 @@
+# Front end code
+/site/scss/.sass-cache/
+/site/layout/*.map
+/site/uploads
+
+# Database password
+/site/conf/database.json
+
+# Miscellaneous
+/.idea
+*.exe

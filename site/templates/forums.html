@@ -1,0 +1,63 @@
+        <_h1|1><_page|title><_h1>
+
+        <_layout|breadcrumb|home|all forums|forum>
+
+        <_forums|begin>
+
+            <div id="lt_div_<_forum|id>" class="lt_layout lt_motif forums_layout" onclick="window.location.href='<_forum|url>'"
+                onmouseover="addClass('lt_div_<_forum|id>','lt_hover'); addClass('lt_p_<_forum|id>','topics_hover')"
+                onmouseout="delClass('lt_div_<_forum|id>','lt_hover'); delClass('lt_p_<_forum|id>','topics_hover')">
+
+                <div class="f_title" title="<_forum|title>">
+                    <a href="<_forum|url>" title="<_forum|description>"><h2><_forum|title></h2></a>
+                </div>
+                <div class="f_posts" title="<_forum|title>">
+                    <a href="<_forum|url>" title="<_forum|description>"><_forum|age><br/>
+                    (<_forum|thread count>)</a>
+                </div>
+
+                <div class="f_desc" title="<_forum|title>">
+                    <a href="<_forum|url>" title="<_forum|description>"><span id="lt_p_<_forum|id>" class="topics"><_forum|description></span></a>
+                </div>
+                <div class="clear"></div>
+
+                <_subforums|begin>
+                    <div id="lt_top_arts_<_subforum|id>" class="lt_top_arts"
+                        onmouseover="addClass('lt_top_arts_<_subforum|id>','lt_top_arts_h'); addClass('lt_ta_<_subforum|id>','lt_ta_h')"
+                        onmouseout="delClass('lt_top_arts_<_subforum|id>','lt_top_arts_h'); delClass('lt_ta_<_subforum|id>','lt_ta_h')"
+                        onclick="window.location.href='<_subforum|url>';cancelBubble(event)">
+
+                        <div id="lt_ta_<_subforum|id>" class="sf_title"><a href="<_subforum|url>" title="<_subforum|description>"><_subforum|title></a></div>
+                        <div class="sf_posts"><_subforum|age> (<_subforum|thread count>)</div>
+                        <div class="clear"></div>
+
+                    </div>
+                <_subforums|end>
+
+            </div>
+
+        <_forums|end>
+
+        <div class="f_threads">
+            <table id="threads" class="forum">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Last Update</th>
+                    <th>C</th>
+                </tr>
+                </thead>
+
+                <_threads|begin>
+                    <tr class="forum fr_h fr_<_thread|new><_thread|placement>" onclick="window.location='<_thread|url>'" onmouseover="addClass('td_<_thread|id>','ld_thread_h')" onmouseout="delClass('td_<_thread|id>','ld_thread_h')">
+                        <td title="<_thread|title>">
+                            <a href="<_thread|url>" title="<_thread|title>" id="td_<_thread|id>"><_thread|title></a>
+                            <div class="right"><_thread|pagination></div>
+                            <br/><span class="tiny">by <_thread|created|alias>, <_thread|created|date></span>
+                        </td>
+                                <td><span class="f_age nowrap"><_thread|age></span><br/><span class="tiny">by <_thread|latest|alias></span></td>
+                        <td><_thread|comments></td>
+                    </tr>
+                <_threads|end>
+            </table>
+        </div>
