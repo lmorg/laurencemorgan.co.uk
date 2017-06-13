@@ -1,6 +1,10 @@
 FROM golang
 
-# Pull this repo
+# Update host
+RUN apt-get update
+RUN apt-get -y upgrade
+
+# Pull this source
 RUN mkdir -p /go/src/github.com/lmorg
 ADD . /go/src/github.com/lmorg/laurencemorgan.co.uk
 
@@ -13,6 +17,10 @@ RUN go get -t -u github.com/kardianos/osext
 
 # Compile the backend code
 RUN go install github.com/lmorg/laurencemorgan.co.uk/level10fireball
+
+# Compile frontend code
+RUN apt-get install -y ruby
+RUN gem install sass
 
 # Uploads directory
 RUN mkdir /uploads

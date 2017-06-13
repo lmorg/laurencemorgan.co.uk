@@ -15,3 +15,10 @@ this project to be good enough to open source (ie there are a plethora
 of other CMS's out there). However if the interest is there then I am
 open to the idea of changing the licencing to something more permissive.
 
+# Build
+
+docker build -t laurencemorgan .
+
+# Run
+
+docker run --publish 80:8080 laurencemorgan

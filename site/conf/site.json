@@ -33,9 +33,8 @@
 	
 	// Path for templates. Doesn't need to be in doc root
 	// zero length string == read from database
-	"templates path":	"/srv/http/www.laurencemorgan.co.uk/templates/",
-	// Path for config. Doesn't need to be in doc root
-	"config path":		"/go/src/github.com/lmorg/laurencemorgan.co.uk/site/conf/",
+	"templates path":	"/go/src/github.com/lmorg/laurencemorgan.co.uk/site/templates/",
+
 	"web content path":	"/go/src/github.com/lmorg/laurencemorgan.co.uk/site/",
 	
 	// Run as a web server rather than proxied behind Apache / nginx / etc
@@ -45,6 +44,12 @@
 	"cookie domain":	"laurencemorgan.co.uk",
 	// always append with a backslash
 	"cookie home path":	"/",
+
+    // social media metadata (eg used for open graph).
+    // paths are appended to the image url (see above)
+    "social media image":"layout/og.default2.jpg",
+    "default avatar":	"layout/default-avatar.jpg",
+    #include "social media.json"
 
 	#include "email.json"
 }

@@ -1,9 +1,27 @@
     // more core settings, but related to the appearance for the site
     
-    "avatar small width":	75,
+	// enable or disable shell executables. Disabled (false) is more secure, but breaks on-the-fly minification
+	"enable executables": false,
+
+	// allow or disallow robots from crawling your site
+	"allow robots": false,
+
+	// allow or disallow users to register
+	"allow registration": true,
+
+	// minify output HTML - desktop / mobile
+	"minify desktop html": false,
+	"minify mobile html": false,
+
+	// application for minification || blank == don't minify.
+	// use "$file" as a variable for the CSS or JS file. For example:
+	//"minify js css executable": "/usr/bin/yui-compressor $file",
+	"minify js css executable": "",
+
+	"avatar small width":	75,
 	"avatar small height":	75,
 	"avatar large width":	300,
 	"avatar large height":	300,
-    
-    "date format article":	"Monday, 02-Jan-06 @ 15:04 (MST)",
+
+	"date format article":	"Monday, 02-Jan-06 @ 15:04 (MST)",
 	"date format thread":	"02-Jan-06 @ 15:04"
