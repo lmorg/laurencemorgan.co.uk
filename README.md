@@ -8,7 +8,7 @@ number of Go idioms, not the easiest to read, and frankly is a bit of an
 embarrassment. However throwing it on a public repo means I can simplify
 my CI pipeline. So here it is. :)
 
-# Copyright Laurence Morgan
+# Copyright
 
 There is intentionally no LICENCE file because I currently don't deem
 this project to be good enough to open source (ie there are a plethora
@@ -21,4 +21,4 @@ docker build -t laurencemorgan .
 
 # Run
 
-docker run --publish 80:8080 laurencemorgan
+docker run --publish 80:8080 -v ~/secrets:/secrets --name laurencemorgan --rm lmorg/laurencemorgan:latest

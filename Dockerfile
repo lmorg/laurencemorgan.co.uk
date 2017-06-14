@@ -25,6 +25,10 @@ RUN gem install sass
 # Uploads directory
 RUN mkdir /uploads
 
+## Copy the database.json file
+#RUN mkdir /secrets
+#RUN ln -s /secrets/database.json /go/src/github.com/lmorg/laurencemorgan.co.uk/site/conf/database.json
+
 # Make the site read-only aside the uploads path
 #RUN chmod -R ugo-w /go/src/github.com/lmorg/laurencemorgan.co.uk
 

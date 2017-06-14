@@ -11,7 +11,7 @@
 	// HTTP (non SSL/TLS)
 	// best practice, run as non-root with port > 1024, then reverse proxy from Apache / etc
 	"http enable":	true,
-	"http port":	8000,
+	"http port":	8080,
 
 	// HTTPS (SSL/TLS)
 	// TODO: not working yet. probably best to run without TLS on localhost and reverse proxy to enable HTTPS
