@@ -1,7 +1,7 @@
 /*
  * misc interactive stuff
  * interactive.js
- * Copyright 2012-2015
+ * Copyright 2012-2017
  * Laurence - Level 10 Fireball
  */
 
