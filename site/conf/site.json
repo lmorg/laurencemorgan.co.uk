@@ -17,18 +17,18 @@
 	// TODO: not working yet. probably best to run without TLS on localhost and reverse proxy to enable HTTPS
 	"tls enable":	false,
 	"tls port":	8081,
-	"tls key":	"/srv/certs/www.h4ck.in.key",
-	"tls cert":	"/srv/certs/www.h4ck.in.crt",
+	"tls key":	"/srv/certs/site.key",
+	"tls cert":	"/srv/certs/cert.crt",
 	
 	// Address for home page
 	// always append with a backslash
-	"home url":	"http://laurencemorgan.co.uk/",
+	"home url":	"//35.177.228.125/",
 	
 	// URLs for non-dynamically generated content
 	// (these can be hosted on CDN if desired)
-	"image url":	       "//static.laurencemorgan.co.uk/images/",
-	"static content url":  "//static.laurencemorgan.co.uk/",
-	"writable url":		"//laurencemorgan.co.uk/uploads/",
+	"image url":	       "//35.177.228.125/images/",
+	"static content url":  "//35.177.228.125/",
+	"writable url":		"//35.177.228.125/uploads/",
 	"writable path":	"/uploads/",
 	
 	// Path for templates. Doesn't need to be in doc root
@@ -41,7 +41,7 @@
 	"web server mode":	true,
 
 	// cookie settings
-	"cookie domain":	"laurencemorgan.co.uk",
+	"cookie domain":	"35.177.228.125",
 	// always append with a backslash
 	"cookie home path":	"/",
 

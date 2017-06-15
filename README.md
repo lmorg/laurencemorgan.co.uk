@@ -1,4 +1,4 @@
-# laurencemorgan.co.uk
+# Laurence Morgan .co.uk
 
 This uses the Level 10 Fireball CMS for forum engine I had written quite
 a number of years back. It was originally written in Perl but this is
@@ -21,4 +21,5 @@ docker build -t laurencemorgan .
 
 # Run
 
-docker run --publish 80:8080 -v ~/secrets:/secrets --name laurencemorgan --rm lmorg/laurencemorgan:latest
+docker run --publish 80:8080 -v ~/secrets:/secrets --name laurencemorgan\
+  --rm lmorg/laurencemorgan:latest
