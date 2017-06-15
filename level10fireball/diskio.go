@@ -118,15 +118,24 @@ func readFile(session *Session, filename string) (b *[]byte, err error) {
 	exe := new(SysExecb)
 	ext := getExt(filename)
 
+	var fileNamePath string
+	//debugLog("#######1", filename)
+	if strings.HasPrefix(filename, "/uploads/") {
+		fileNamePath = PWD_WRITABLE_PATH + strings.Replace(filename, "/uploads/", "/", 1)
+	} else {
+		fileNamePath = PWD_WEB_CONTENT_PATH + filename
+	}
+	//debugLog("#######2", fileNamePath)
+
 	if (ext == "js" || ext == "css") && CORE_MINIFY_JS_CSS != "" {
-		s_params := strings.Replace(CORE_MINIFY_JS_CSS, "$file", PWD_WEB_CONTENT_PATH+filename, -1)
+		s_params := strings.Replace(CORE_MINIFY_JS_CSS, "$file", fileNamePath, -1)
 		a_params := strings.Split(s_params, " ")
 		cmd := a_params[0]
 		params := a_params[1:]
 		exe = SystemExecuteSTDOUTb(session, true, cmd, params...)
 	}
 	if exe.err != nil || len(exe.stdout) == 0 {
-		out, err = ioutil.ReadFile(PWD_WEB_CONTENT_PATH + filename)
+		out, err = ioutil.ReadFile(fileNamePath)
 		return &out, err
 	}
 	return &exe.stdout, exe.err
@@ -162,7 +171,7 @@ func getExt(filename string) string {
 func pageWebServerMode(session *Session) {
 	file := new(CacheFile)
 	file.Return = make(chan *[]byte)
-	//debugLog("new file object")
+
 	go file.Get(session, session.r.URL.Path)
 	b := <-file.Return
 	//debugLog("channel returned")

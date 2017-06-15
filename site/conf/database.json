@@ -1,0 +1,15 @@
+"database": {
+    // database access
+    "platform":	"mysql",
+    "database":	"laurencemorgan_co_uk",
+    "username": "{envvar}",
+    "password": "{envvar}",
+
+    // Connection type values:
+    //		tcp  == tcp/IP connection
+    //		unix == unix socket connection
+    "connection type":	"tcp",
+    "host":				"blogs.cluster-cadts0sml5rf.eu-west-1.rds.amazonaws.com",
+    "port":				3306,
+    "unix socket":		"/var/run/mysqld/mysqld.sock"
+}

@@ -149,19 +149,6 @@ const CORE_HIDE_PM_FORUMS = true // hide PM from all forums
 
 var (
 	/********************************
-	        DAEMON CONFIG:
-	********************************/
-
-	DAEMON_SETUID   bool = false // set user id and group id
-	DAEMON_USER_ID  int  = 33
-	DAEMON_GROUP_ID int  = 33
-
-	DAEMON_CHROOT   bool   = false // experimental and requires lvl10 to be compiled with cgo disabled
-	DAEMON_SITE_DIR string = ""
-)
-
-var (
-	/********************************
 	        MISC CONFIG:
 	********************************/
 

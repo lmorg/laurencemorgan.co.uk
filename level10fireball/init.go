@@ -38,7 +38,7 @@ func main() {
 	}
 
 	time.Sleep(1 * time.Second)
-	secureDaemon()
+	//secureDaemon()
 	go cacheForumsManager()
 	go cacheFileManager()
 	go cacheUsersManager()

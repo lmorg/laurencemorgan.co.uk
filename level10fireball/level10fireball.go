@@ -495,14 +495,16 @@ func loadEnvironmentFromDB(layout *Layout) {
 		layout.Menubar = append(layout.Menubar, Menubar{label, desc, url})
 	}
 
-	layout.MenubarLeft = "&lt;&nbsp;"
-	layout.MenubarRight = "&nbsp;&gt;"
+	//layout.MenubarLeft = "&lt;&nbsp;"
+	//layout.MenubarRight = "&nbsp;&gt;"
+	layout.MenubarLeft = `<div class="menubar-item nowrap">`
+	layout.MenubarRight = `</div>`
 
 	// TODO: the following will eventually be pushed into the database as well (or config file (or both))
 
 	layout.BreadcrumbSeparator = `&gt;&gt;`
 	layout.nListColumns = 2
-	layout.nArticlesPerTopic = 3
+	layout.nArticlesPerTopic = 4
 	layout.nItemsPerPage = 8
 	layout.nCommentsPerHighlight = 3
 	layout.nCommentNestsPerPage = 10
@@ -510,8 +512,8 @@ func loadEnvironmentFromDB(layout *Layout) {
 	layout.nCommentsFlatPerPage = 20
 	layout.nCharsMobileBreadcrumbs = 18
 	layout.ArticleAppendComments = COMMENTS_HIGHLIGHTS //TODO: I need to test COMMENTS_ALL works
-	layout.xEmbeddedFrame = 800                        //640
-	layout.yEmbeddedFrame = 600                        //390
+	layout.xEmbeddedFrame = 800
+	layout.yEmbeddedFrame = 600
 	layout.nForumRowsColours = 2
 
 	//layout.Desktop.RealTime = ENABLE_REAL_TIME_DESKTOP

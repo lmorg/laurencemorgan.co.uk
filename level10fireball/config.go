@@ -205,7 +205,6 @@ func loadEnvironmentFromConf(conf_file, conf_dir string) {
 	failOnErr(json.Unmarshal(b, &config), "loadEnvironmentFromConf")
 	var site JSONConfig = config.(map[string]interface{})["site"].(map[string]interface{})
 	var database JSONConfig = config.(map[string]interface{})["database"].(map[string]interface{})
-	var daemon JSONConfig = config.(map[string]interface{})["daemon"].(map[string]interface{})
 	var core JSONConfig = config.(map[string]interface{})["core"].(map[string]interface{})
 
 	// database
@@ -261,14 +260,6 @@ func loadEnvironmentFromConf(conf_file, conf_dir string) {
 	site.GetInt("smtp port", &SMTP_PORT)
 	site.GetString("email sender address", &SMTP_SENDER_ADDRESS)
 
-	//daemon
-	daemon.GetBool("enable setuid", &DAEMON_SETUID)
-	daemon.GetInt("user id", &DAEMON_USER_ID)
-	daemon.GetInt("group id", &DAEMON_GROUP_ID)
-
-	daemon.GetBool("enable chroot", &DAEMON_CHROOT)
-	daemon.GetString("chroot dir", &DAEMON_SITE_DIR)
-
 	//core
 	core.GetFloat64("token age", &CORE_TOKEN_AGE)
 	core.GetInt("max os threads", &CORE_GO_MAX_PROCS)
@@ -323,4 +314,11 @@ func loadEnvironmentFromConf(conf_file, conf_dir string) {
 	core.GetBool("websockets desktop", &ENABLE_REAL_TIME_DESKTOP)
 	core.GetBool("websockets mobile", &ENABLE_REAL_TIME_MOBILE)
 
+	if DB_USERNAME == "{envvar}" {
+		DB_USERNAME = os.Getenv("DB_USERNAME")
+	}
+
+	if DB_PASSWORD == "{envvar}" {
+		DB_PASSWORD = os.Getenv("DB_PASSWORD")
+	}
 }

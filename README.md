@@ -19,7 +19,13 @@ open to the idea of changing the licencing to something more permissive.
 
 docker build -t laurencemorgan .
 
+# Import
+
+docker pull lmorg/laurencemorgan:latest && docker run --publish 80:8080 \
+  -v ~/uploads:/uploads --name laurencemorgan --rm lmorg/laurencemorgan:latest
+
 # Run
 
-docker run --publish 80:8080 -v ~/secrets:/secrets --name laurencemorgan\
+docker run --publish 80:8080 -v /uploads:/uploads --name laurencemorgan \
+  -e DB_USERNAME="$DB_USERNAME" -e DB_PASSWORD="$DB_PASSWORD" \
   --rm lmorg/laurencemorgan:latest

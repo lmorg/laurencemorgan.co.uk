@@ -4,7 +4,7 @@
 /site/uploads
 
 # Database password
-/site/conf/database.json
+#/site/conf/database.json
 
 # Miscellaneous
 /.idea

@@ -22,13 +22,13 @@
 	
 	// Address for home page
 	// always append with a backslash
-	"home url":	"//35.177.228.125/",
+	"home url":	"//34.248.74.199/",
 	
 	// URLs for non-dynamically generated content
 	// (these can be hosted on CDN if desired)
-	"image url":	       "//35.177.228.125/images/",
-	"static content url":  "//35.177.228.125/",
-	"writable url":		"//35.177.228.125/uploads/",
+	"image url":	       "//34.248.74.199/images/",
+	"static content url":  "//34.248.74.199/",
+	"writable url":		"//34.248.74.199/uploads/",
 	"writable path":	"/uploads/",
 	
 	// Path for templates. Doesn't need to be in doc root
@@ -41,14 +41,14 @@
 	"web server mode":	true,
 
 	// cookie settings
-	"cookie domain":	"35.177.228.125",
+	"cookie domain":	"34.248.74.199",
 	// always append with a backslash
 	"cookie home path":	"/",
 
     // social media metadata (eg used for open graph).
     // paths are appended to the image url (see above)
-    "social media image":"layout/og.default2.jpg",
-    "default avatar":	"layout/default-avatar.jpg",
+    "social media image":"layout/og-default.jpg",
+    "default avatar":	"layout/default-avatar.gif",
     #include "social media.json"
 
 	#include "email.json"
