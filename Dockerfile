@@ -22,13 +22,14 @@ RUN go install github.com/lmorg/laurencemorgan.co.uk/level10fireball
 
 # Compile frontend code
 WORKDIR /go/src/github.com/lmorg/laurencemorgan.co.uk/site/
-RUN sass scss/desktop.scss layout/desktop.css
-RUN sass scss/mobile.scss  layout/mobile.css
+RUN sass scss/desktop.scss layout/desktop-h.css
+RUN sass scss/mobile.scss  layout/mobile-h.css
 
 # Minimize
-RUN yui-compressor -o layout/i.js  layout/interactive.js
-RUN yui-compressor -o layout/d.css layout/desktop.css
-RUN yui-compressor -o layout/m.css layout/mobile.css
+RUN mv layout/interactive.js layout/interactive-h.js
+RUN yui-compressor -o layout/iteractive.js  layout/interactive-h.js
+RUN yui-compressor -o layout/desktop.css layout/desktop-h.css
+RUN yui-compressor -o layout/mobile.css  layout/mobile-h.css
 
 # Uploads directory
 RUN mkdir /uploads
