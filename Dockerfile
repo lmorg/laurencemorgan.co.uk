@@ -1,10 +1,14 @@
 FROM golang
 
+#####################################################################
+# This packages up the code into a live deployable Docker container #
+#####################################################################
+
 ## Update host
-RUN apt-get update
+#RUN apt-get update
+#RUN apt-get -y upgrade
 RUN apt-get install -y ruby yui-compressor
 RUN gem install sass
-#RUN apt-get -y upgrade
 
 # Pull this source
 RUN mkdir -p /go/src/github.com/lmorg
@@ -27,15 +31,15 @@ RUN sass scss/mobile.scss  layout/mobile-h.css
 
 # Minimize
 RUN mv layout/interactive.js layout/interactive-h.js
-RUN yui-compressor -o layout/iteractive.js  layout/interactive-h.js
-RUN yui-compressor -o layout/desktop.css layout/desktop-h.css
-RUN yui-compressor -o layout/mobile.css  layout/mobile-h.css
+RUN yui-compressor -o layout/interactive.js layout/interactive-h.js
+RUN yui-compressor -o layout/desktop.css   layout/desktop-h.css
+RUN yui-compressor -o layout/mobile.css    layout/mobile-h.css
 
 # Uploads directory
 RUN mkdir /uploads
 
 # Make the site read-only aside the uploads path
-#RUN chmod -R ugo-w /go/src/github.com/lmorg/laurencemorgan.co.uk
+RUN chmod -R ugo-w /go/src/github.com/lmorg/laurencemorgan.co.uk
 
 RUN groupadd -r lvl10 && useradd --no-log-init -r -g lvl10 lvl10
 USER lvl10
