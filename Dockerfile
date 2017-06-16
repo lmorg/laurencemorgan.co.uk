@@ -5,7 +5,8 @@ FROM golang
 #####################################################################
 
 ## Update host
-#RUN apt-get update
+RUN apt-get update
+# (update required for Ruby)
 #RUN apt-get -y upgrade
 RUN apt-get install -y ruby yui-compressor
 RUN gem install sass
