@@ -35,6 +35,15 @@ func lsImages(path string) (images []string) {
 	os.Mkdir(path+SLASH+THUMBS, 755)
 	os.Mkdir(path+SLASH+EMBEDS, 755)
 
+	genThumbs := func(filename string) {
+		err := generateThumb(path,filename , &wg)
+		if err!= nil {
+			fmt.Println(filename+": Successful")
+		} else {
+			fmt.Println(filename+": "+err.Error())
+		}
+	}
+
 	files, _ := ioutil.ReadDir(path)
 	for i := 0; i < len(files); i += CONCURRENCY {
 
@@ -46,7 +55,7 @@ func lsImages(path string) (images []string) {
 				// does file exist? if not, create thumb
 				if _, err := os.Stat(path + SLASH + THUMBS + SLASH + files[i+j].Name()); err != nil {
 					wg.Add(1)
-					go fmt.Println(generateThumb(path, files[i+j].Name(), &wg))
+					go genThumbs(files[i+j].Name())
 				}
 			}
 
@@ -92,11 +101,11 @@ func generateThumb(path, filename string, wg *sync.WaitGroup) (err error) {
 	// resize to width / hight using Lanczos resampling
 	// and preserve aspect ratio
 	if conf.Width > conf.Height {
-		img_thumb = resize.Resize(0, 100, img, resize.NearestNeighbor)
-		img_embed = resize.Resize(1024, 0, img, resize.NearestNeighbor)
+		img_thumb = resize.Resize(0, 100, img, resize.Lanczos3)
+		img_embed = resize.Resize(1024, 0, img, resize.Lanczos3)
 	} else {
-		img_thumb = resize.Resize(100, 0, img, resize.NearestNeighbor)
-		img_embed = resize.Resize(0, 1024, img, resize.NearestNeighbor)
+		img_thumb = resize.Resize(100, 0, img, resize.Lanczos3)
+		img_embed = resize.Resize(0, 1024, img, resize.Lanczos3)
 	}
 
 	if f_thumb, err = os.Create(path + SLASH + THUMBS + SLASH + filename); err != nil {
