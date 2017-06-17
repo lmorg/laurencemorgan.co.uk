@@ -38,9 +38,9 @@ func lsImages(path string) (images []string) {
 	genThumbs := func(filename string) {
 		err := generateThumb(path,filename , &wg)
 		if err!= nil {
-			fmt.Println(filename+": Successful")
-		} else {
 			fmt.Println(filename+": "+err.Error())
+		} else {
+			fmt.Println(filename+": Successful")
 		}
 	}
 
