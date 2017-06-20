@@ -16,8 +16,8 @@ import (
 
 const (
 	CMS_NAME      string = "Level 10 Fireball"
-	CMS_URL       string = "http://h4ck.in"
-	CMS_VERSION   string = "1.4.5201 ALPHA"
+	CMS_URL       string = "https://laurencemorgan.co.uk"
+	CMS_VERSION   string = "1.5.5206 ALPHA"
 	CMS_COPYRIGHT string = "© Laurence 2012-2017"
 )
 
@@ -42,7 +42,7 @@ type Session struct {
 	GalleryID       uint     // just in case there's multiple galleries per page
 	Path            []string // the URL is broken down into an array for ease
 	File            string   // last item in path
-	PostProcInc     string   // misc styling included in page footer (usually geenrated CSS and Javascript)
+	PostProcInc     string   // misc styling included in page footer (usually generated CSS and Javascript)
 	Variables       map[string]string
 	Now             time.Time
 	w               http.ResponseWriter
@@ -265,7 +265,7 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 
 	defer func() {
 		dbClose(session.db) // if db connection isn't already closed...
-		if session.Path[1] != "PING" {
+		if session.Path[1] != "ping" {
 			accessLog(&session) // log http requests
 		}
 	}()
@@ -349,7 +349,7 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 			pageRobots(&session)
 			return
 
-		case "ping", "PING":
+		case "ping":
 			pagePing(&session)
 			return
 

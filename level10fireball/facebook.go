@@ -24,7 +24,6 @@ func facebookLogin(session *Session) string {
 		code           string
 		attempt        string
 		state          string
-		token          *url.URL
 		err            error
 		uri            string
 		http_resp      *http.Response
@@ -37,6 +36,11 @@ func facebookLogin(session *Session) string {
 	// check if there's a return from facebook
 	code = session.r.FormValue("code")
 	attempt = session.GetCookie("attempt").Value
+	// this is a bit of a cheap trick, but it saves writing a bespoke parser
+	//token, err = url.Parse("/url/?" + string(http_body))
+	//if err == nil {
+	//	user.Facebook.AccessToken = token.Query().Get("access_token")
+	//}
 
 	// if we have had a response from facebook then lets check our validation hash
 	// if we haven't, then lets create a new validation hash.
@@ -93,32 +97,39 @@ func facebookLogin(session *Session) string {
 
 	if err == nil {
 		http_body, err = ioutil.ReadAll(http_resp.Body)
+		http_resp.Body.Close()
 		if err == nil {
-			http_resp.Body.Close()
-			// this is a bit of a cheap trick, but it saves writing a bespoke parser
-			token, err = url.Parse("/url/?" + string(http_body))
+			//var j interface{}
+			//err = json.Unmarshal(http_body, &j)
+			err := json.Unmarshal(http_body, &json_interface)
 			if err == nil {
-				user.Facebook.AccessToken = token.Query().Get("access_token")
+				json_values = json_interface.(map[string]interface{})
+				user.Facebook.AccessToken = json_values["access_token"].(string)
 			}
+			// this is a bit of a cheap trick, but it saves writing a bespoke parser
+			//token, err = url.Parse("/url/?" + string(http_body))
+			//if err == nil {
+			//	user.Facebook.AccessToken = token.Query().Get("access_token")
+			//}
 		}
 	}
 
-	// did we recieve an access token?
+	// did we receive an access token?
 	if user.Facebook.AccessToken == "" {
+		debugLog(string(http_body))
 		facebookLoginFailed(session, "Unable to obtain an access token from facebook.", err)
 		return ""
 	}
 
 	////////////////////////////////////////////////////////////////////////////
 	// get json
-	//http_resp, err = http.Get(fmt.Sprintf(fb_graphapi_accinfo, user.Facebook.AccessToken))
 	uri = fmt.Sprintf(fb_graphapi_accinfo, user.Facebook.AccessToken)
 	http_resp, err = httpRequest(httpClient(session, uri))
 	if err == nil {
 		http_body, err = ioutil.ReadAll(http_resp.Body)
-		if err == nil {
-			http_resp.Body.Close()
-		}
+		//if err == nil {
+		http_resp.Body.Close()
+		//}
 	}
 	if err != nil {
 		facebookLoginFailed(session, "Communication with Facebook died.", err)

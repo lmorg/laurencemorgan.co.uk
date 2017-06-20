@@ -3,8 +3,8 @@ package main
 
 import (
 	"fmt"
-	"html"
 	"github.com/lmorg/laurencemorgan.co.uk/level10fireball/gallery"
+	"html"
 	"math/rand"
 	"regexp"
 	"strconv"
@@ -813,8 +813,8 @@ var fnTags = map[string]func(*[]string, *Session) string{
 		return fmt.Sprintf(`
        <div class="embedded_container">
          <div class="embedded_frame embedded_yt"><iframe title="%s" type="text/html"
-           src="http://www.youtube.com/embed/%s" frameborder="0" %s></iframe></div>
-         <div class="center image_desc">Youtube video: <a class="image_desc" href="http://www.youtube.com/watch?v=%s" target="_blank">%s</a></div>
+           src="//www.youtube.com/embed/%s" frameborder="0" %s></iframe></div>
+         <div class="center image_desc">Youtube video: <a class="image_desc" href="//www.youtube.com/watch?v=%s" target="_blank">%s</a></div>
        </div>`, (*tag)[2], (*tag)[1], size, (*tag)[1], (*tag)[2])
 	},
 

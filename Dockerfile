@@ -40,7 +40,7 @@ RUN yui-compressor -o layout/mobile.css    layout/mobile-h.css
 RUN mkdir /uploads
 
 # Make the site read-only aside the uploads path
-#RUN chmod -R ugo-w /go/src/github.com/lmorg/laurencemorgan.co.uk
+RUN chmod -R ugo-w /go/src/github.com/lmorg/laurencemorgan.co.uk
 
 RUN groupadd -r lvl10 && useradd --no-log-init -r -g lvl10 lvl10
 USER lvl10

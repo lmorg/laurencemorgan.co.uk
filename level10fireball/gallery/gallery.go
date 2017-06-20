@@ -36,11 +36,11 @@ func lsImages(path string) (images []string) {
 	os.Mkdir(path+SLASH+EMBEDS, 755)
 
 	genThumbs := func(filename string) {
-		err := generateThumb(path,filename , &wg)
-		if err!= nil {
-			fmt.Println(filename+": "+err.Error())
+		err := generateThumb(path, filename, &wg)
+		if err != nil {
+			fmt.Println(filename + ": " + err.Error())
 		} else {
-			fmt.Println(filename+": Successful")
+			fmt.Println(filename + ": Successful")
 		}
 	}
 
