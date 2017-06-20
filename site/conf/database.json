@@ -1,15 +1,15 @@
 "database": {
     // database access
-    "platform":	"mysql",
-    "database":	"laurencemorgan_co_uk",
-    "username": "{envvar}",
-    "password": "{envvar}",
+    "db platform":	"mysql",
+    "db database":	"laurencemorgan_co_uk",
+    "db username": "{envvar}",
+    "db password": "{envvar}",
 
     // Connection type values:
     //		tcp  == tcp/IP connection
     //		unix == unix socket connection
-    "connection type":	"tcp",
-    "host":				"blogs.cluster-cadts0sml5rf.eu-west-1.rds.amazonaws.com",
-    "port":				3306,
-    "unix socket":		"/var/run/mysqld/mysqld.sock"
+    "db connection type":	"tcp",
+    "db host":				"blogs.cluster-cadts0sml5rf.eu-west-1.rds.amazonaws.com",
+    "db port":				3306,
+    "db unix socket":		"/var/run/mysqld/mysqld.sock"
 }

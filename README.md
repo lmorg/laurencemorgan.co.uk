@@ -27,5 +27,8 @@ docker pull lmorg/laurencemorgan:latest && docker run --publish 80:8080 \
 # Run
 
 docker run --publish 80:8080 -v /uploads:/uploads --name laurencemorgan \
-  -e DB_USERNAME="$DB_USERNAME" -e DB_PASSWORD="$DB_PASSWORD" \
+  -e l10f_db_username="$l10f_db_username" \
+  -e l10f_db_password="$l10f_db_password" \
+  -e l10f_facebook_app_id="$l10f_facebook_app_id" \
+  -e l10f_facebook_app_secret="$l10f_facebook_app_secret" \
   --rm lmorg/laurencemorgan:latest

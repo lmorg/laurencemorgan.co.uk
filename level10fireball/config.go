@@ -25,6 +25,10 @@ func (c JSONConfig) GetString(key string, p *string) {
 	default:
 		failOnErr(errors.New(fmt.Sprintf("[json config] [GetString] key[%s] unexpected type %T", key, t)), "(c JSONConfig) GetString")
 	}
+
+	if *p == "{envvar}" {
+		*p = os.Getenv("l10f_" + strings.Replace(key, " ", "_", -1))
+	}
 }
 
 func (c JSONConfig) GetInt(key string, p *int) {
@@ -208,15 +212,15 @@ func loadEnvironmentFromConf(conf_file, conf_dir string) {
 	var core JSONConfig = config.(map[string]interface{})["core"].(map[string]interface{})
 
 	// database
-	database.GetString("platform", &DB_PLATFORM)
-	database.GetString("database", &DB_DATABASE)
-	database.GetString("username", &DB_USERNAME)
-	database.GetString("password", &DB_PASSWORD)
+	database.GetString("db platform", &DB_PLATFORM)
+	database.GetString("db database", &DB_DATABASE)
+	database.GetString("db username", &DB_USERNAME)
+	database.GetString("db password", &DB_PASSWORD)
 
-	database.GetString("connection type", &DB_CON_TYPE)
-	database.GetString("host", &DB_HOSTNAME)
-	database.GetUint16("port", &DB_PORT_NUM)
-	database.GetString("unix socket", &DB_UNIX_SOC)
+	database.GetString("db connection type", &DB_CON_TYPE)
+	database.GetString("db host", &DB_HOSTNAME)
+	database.GetUint16("db port", &DB_PORT_NUM)
+	database.GetString("db unix socket", &DB_UNIX_SOC)
 
 	site.GetString("name", &SITE_NAME)
 	site.GetString("description", &SITE_DESCRIPTION)
@@ -313,12 +317,4 @@ func loadEnvironmentFromConf(conf_file, conf_dir string) {
 	// websockets
 	core.GetBool("websockets desktop", &ENABLE_REAL_TIME_DESKTOP)
 	core.GetBool("websockets mobile", &ENABLE_REAL_TIME_MOBILE)
-
-	if DB_USERNAME == "{envvar}" {
-		DB_USERNAME = os.Getenv("DB_USERNAME")
-	}
-
-	if DB_PASSWORD == "{envvar}" {
-		DB_PASSWORD = os.Getenv("DB_PASSWORD")
-	}
 }
