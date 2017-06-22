@@ -22,10 +22,6 @@ open to the idea of changing the licencing to something more permissive.
 # Import
 
     docker pull lmorg/laurencemorgan:latest
-    docker run --publish 80:8080 \
-        -v /uploads:/uploads \
-        --name laurencemorgan \
-        --rm lmorg/laurencemorgan:latest
 
 # Run
 
