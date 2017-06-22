@@ -26,9 +26,9 @@
 	
 	// URLs for non-dynamically generated content
 	// (these can be hosted on CDN if desired)
-	"image url":	       "https://static.laurencemorgan.co.uk/images/",
-	"static content url":  "https://static.laurencemorgan.co.uk/",
-	"writable url":		"https://laurencemorgan.co.uk/uploads/",
+	"image url":	       "//static.laurencemorgan.co.uk/images/",
+	"static content url":  "//static.laurencemorgan.co.uk/",
+	"writable url":		"//laurencemorgan.co.uk/uploads/",
 	"writable path":	"/uploads/",
 	
 	// Path for templates. Doesn't need to be in doc root
