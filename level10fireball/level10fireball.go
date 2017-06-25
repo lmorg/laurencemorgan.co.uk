@@ -17,7 +17,7 @@ import (
 const (
 	CMS_NAME      string = "Level 10 Fireball"
 	CMS_URL       string = "https://laurencemorgan.co.uk"
-	CMS_VERSION   string = "1.5.5206 ALPHA"
+	CMS_VERSION   string = "1.5.5207 ALPHA"
 	CMS_COPYRIGHT string = "© Laurence 2012-2017"
 )
 
