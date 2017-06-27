@@ -17,17 +17,15 @@ open to the idea of changing the licencing to something more permissive.
 
 # Build
 
-    docker build -t laurencemorgan .
-
-# Import
-
-    docker pull lmorg/laurencemorgan:latest
+    docker build -t lmorg/laurencemorgan:latest .
 
 # Run
 
-    docker run --publish 80:8080 -v /uploads:/uploads --name laurencemorgan \
+    docker run --rm --name laurencemorgan \
+        -v /uploads:/uploads \
         -e l10f_db_username="$l10f_db_username" \
         -e l10f_db_password="$l10f_db_password" \
         -e l10f_facebook_app_id="$l10f_facebook_app_id" \
         -e l10f_facebook_app_secret="$l10f_facebook_app_secret" \
-        --rm lmorg/laurencemorgan:latest
+        --publish 80:8080 \
+        lmorg/laurencemorgan:latest

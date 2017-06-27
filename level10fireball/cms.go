@@ -913,7 +913,7 @@ func __img(tag *[]string, session *Session) string {
 		a_close string
 	)
 	if url[:1] == "/" && url[1:2] != "/" {
-		url = URL_IMAGE_PATH+ url[1:]
+		url = URL_IMAGE_PATH + url[1:]
 	} else if !rx_html_prefix.MatchString(url) {
 		url = fmt.Sprintf("%s_img/%s", URL_IMAGE_PATH, url)
 	}

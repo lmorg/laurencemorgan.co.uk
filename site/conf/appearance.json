@@ -10,12 +10,13 @@
 	"allow registration": true,
 
 	// minify output HTML - desktop / mobile
-	"minify desktop html": true,
+	"minify desktop html": false,
 	"minify mobile html": true,
 
 	// application for minification || blank == don't minify.
 	// use "$file" as a variable for the CSS or JS file. For example:
-	//"minify js css executable": "/usr/bin/yui-compressor $file",
+	//"minify js css executable": "/usr/bin/yui-compressor $file".
+	// NOTE: this isn't necessary if you minify the source during build time (eg via the Docker build script).
 	"minify js css executable": "",
 
 	"avatar small width":	75,

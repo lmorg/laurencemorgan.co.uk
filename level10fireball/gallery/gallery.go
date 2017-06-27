@@ -18,7 +18,7 @@ const SLASH = "/"
 const (
 	THUMBS      = "thumbs"
 	EMBEDS      = "embeds"
-	CONCURRENCY = 5
+	CONCURRENCY = 1
 )
 
 var (
@@ -29,7 +29,7 @@ func init() {
 	rx_img_jpg, _ = regexp.Compile(`(?i)\.(jpg|jpeg)`)
 }
 
-func lsImages(path string) (images []string) {
+func LsImages(path string, status *string) (images []string) {
 	var wg sync.WaitGroup
 
 	os.Mkdir(path+SLASH+THUMBS, 755)
@@ -37,10 +37,15 @@ func lsImages(path string) (images []string) {
 
 	genThumbs := func(filename string) {
 		err := generateThumb(path, filename, &wg)
+		var s string
 		if err != nil {
-			fmt.Println(filename + ": " + err.Error())
+			s = filename + ": " + err.Error()
 		} else {
-			fmt.Println(filename + ": Successful")
+			s = filename + ": Successful"
+		}
+		fmt.Println(s)
+		if status != nil {
+			*status += s + "<br/>"
 		}
 	}
 
@@ -98,7 +103,7 @@ func generateThumb(path, filename string, wg *sync.WaitGroup) (err error) {
 	}
 	file.Close()
 
-	// resize to width / hight using Lanczos resampling
+	// resize to width / height using Lanczos resampling
 	// and preserve aspect ratio
 	if conf.Width > conf.Height {
 		img_thumb = resize.Resize(0, 100, img, resize.Lanczos3)
@@ -128,7 +133,7 @@ func Render(gallery, thumb, path, url, id string) (out string) {
 		url = url[:len(url)-1]
 	}
 
-	images := lsImages(path)
+	images := LsImages(path, nil)
 	if len(images) == 0 {
 		return
 	}
