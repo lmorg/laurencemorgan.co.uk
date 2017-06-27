@@ -687,6 +687,9 @@ var fnTags = map[string]func(*[]string, *Session) string{
 		case "twitter":
 			return SITE_TWITTER
 
+		case "fb app id":
+			return FACEBOOK_APP_ID
+
 		case "image":
 			i, err := strconv.Atoi((*tag)[2])
 			if err != nil {
@@ -924,7 +927,7 @@ func __img(tag *[]string, session *Session) string {
 		a_open = fmt.Sprintf(`<a href="%s" title="%s">`, (*tag)[3], (*tag)[2])
 		a_close = "</a>"
 	}
-	session.Page.Images = append(session.Page.Images, url)
+	session.Page.Images = append(session.Page.Images, SITE_PROTO_PREFIX+url)
 	return fmt.Sprintf(`
        <div class="center embedded_container">%s<img src="%s" alt="[%s]" title="%s" class="embedded_image scale_image"/>%s<br/>
        <span class="image_desc">%s</span></div>`, a_open, url, (*tag)[2], (*tag)[2], a_close, strings.Replace((*tag)[2], "\n", "<br/>", -1))

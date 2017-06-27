@@ -3,7 +3,7 @@
 	"name":		"Laurence Morgan",
 	"description":	"The unsorted inane drivelings of the aforementioned",
 	"copyright":	"© Laurence 2012-2017",
-	"version":	"3.6.12",
+	"version":	"3.7.18",
 	
 	// best practice, listen on localhost, and then forward requests via Apache reverse proxy or load balancer
 	"host":		"0.0.0.0",
@@ -19,11 +19,13 @@
 	"tls port":	8081,
 	"tls key":	"/srv/certs/site.key",
 	"tls cert":	"/srv/certs/cert.crt",
-	
+
+	"proto prefix":	"https:",
+
 	// Address for home page
 	// always append with a backslash
 	"home url":	"https://laurencemorgan.co.uk/",
-	
+
 	// URLs for non-dynamically generated content
 	// (these can be hosted on CDN if desired)
 	"image url":	       "//static.laurencemorgan.co.uk/images/",

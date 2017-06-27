@@ -37,7 +37,8 @@ var (
 	SITE_TLS_CERT   string = "example.com.crt"
 
 	// address for home page
-	SITE_HOME_URL string = "http://example.com/" // always append with a backslash
+	SITE_PROTO_PREFIX string = "http:"               // "https:" for SSL - always append with a colon
+	SITE_HOME_URL     string = "http://example.com/" // always append with a backslash
 
 	// urls for non-dynamically generated content
 	URL_IMAGE_PATH          string = "//example.com/images/"

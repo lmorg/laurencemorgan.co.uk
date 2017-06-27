@@ -236,6 +236,7 @@ func loadEnvironmentFromConf(conf_file, conf_dir string) {
 	site.GetString("tls key", &SITE_TLS_KEY)
 	site.GetString("tls cert", &SITE_TLS_CERT)
 
+	site.GetString("proto prefix", &SITE_PROTO_PREFIX)
 	site.GetString("home url", &SITE_HOME_URL)
 	site.GetString("image url", &URL_IMAGE_PATH)
 	site.GetString("static content url", &URL_STATIC_CONTENT_PATH)

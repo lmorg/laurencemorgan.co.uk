@@ -138,7 +138,7 @@ func (session Session) RealTime() bool {
 func NewSession(w http.ResponseWriter, r *http.Request, layout *Layout) (session Session) {
 	session.Now = time.Now() // first job so we can capture proc times
 
-	session.Page.Images = append(session.Page.Images, "http:"+SITE_SOCIAL_MEDIA_IMAGE)
+	session.Page.Images = append(session.Page.Images, SITE_PROTO_PREFIX+SITE_SOCIAL_MEDIA_IMAGE)
 	session.Variables = make(map[string]string)
 	session.UnreadComments = make(map[uint]bool)
 

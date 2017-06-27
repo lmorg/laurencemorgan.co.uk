@@ -1,37 +1,90 @@
-        <div class="center embedded_container g_basic_f">
 
-            <div id="g<_gallery|id>" class="g_basic_d">
-                <div class="g_basic_di">
-                    <a id="g<_gallery|id>_a" href="<_image|full>" target="_blank" title="Click to view image in full screen"><img id="g<_gallery|id>_img" src="<_image|url>" alt="Click to view image in full screen" class="scale_image g_basic_i"/></a>
-                </div>
-                
-                <div id="g<_gallery|id>_nb" class="g_basic_nav_back"
-                    onmouseover="addClass('g<_gallery|id>_nb','g_basic_nav_h')"
-                    onmouseout="delClass('g<_gallery|id>_nb','g_basic_nav_h')"
-                    onclick="gNav('g<_gallery|id>',-1)">
-                </div>
-                
-                <div id="g<_gallery|id>_nf" class="g_basic_nav_fwd"
-                    onmouseover="addClass('g<_gallery|id>_nf','g_basic_nav_h')"
-                    onmouseout="delClass('g<_gallery|id>_nf','g_basic_nav_h')"
-                    onclick="gNav('g<_gallery|id>',1)">
-                </div> 
-                
-            </div>
+<div class="g_basic_di">
+    <img id="g<_gallery|id>_preview" src="<_image|url>" alt="View gallery" class="scale_image g_basic_i" onclick="addClass('model_g<_gallery|id>','glb_modal_v')"/>
+    <div>Click to view gallery</div>
+</div>
 
-            <div class="clear"></div>
+<div id="model_g<_gallery|id>" class="glb_modal">
+    <span class="glb_close glb_cursor" onclick="delClass('model_g<_gallery|id>','glb_modal_v')">&times;</span>
 
-            <_thumbs|begin>
+    <div class="glb_modal-content">
 
-                <div id="g<_gallery|id>_t<_thumb|id>" class="g_basic_t g_basic_t_<_thumb|new>"
-                    onmouseover="addClass('g<_gallery|id>_t<_thumb|id>','g_hover')"
-                    onmouseout="delClass('g<_gallery|id>_t<_thumb|id>','g_hover')"
-                    onclick="gDisplayImg('g<_gallery|id>',<_thumb|id>)"
-                >
-
-                    <div class="g_basic_ti" style="background: #e0e0e0 url('<_thumb|url>') no-repeat center center;"></div>
-                </div>
-
-            <_thumbs|end>
-
+        <div id="glb_slide">
+            <a id="g<_gallery|id>_a" href="<_image|full>" target="_blank" title="Click to view image in full screen"><img id="g<_gallery|id>_img" src="<_image|url>" alt="Click to view image in full screen"/></a>
         </div>
+
+        <a class="glb_prev" onclick="gNav('g<_gallery|id>',-1)">&#10094;</a>
+        <a class="glb_next" onclick="gNav('g<_gallery|id>',1)">&#10095;</a>
+
+        <!--<div id="g<_gallery|id>_nb" class="g_basic_nav_back"
+             onmouseover="addClass('g<_gallery|id>_nb','g_basic_nav_h')"
+             onmouseout="delClass('g<_gallery|id>_nb','g_basic_nav_h')"
+             onclick="gNav('g<_gallery|id>',-1)">
+        </div>
+
+        <div id="g<_gallery|id>_nf" class="g_basic_nav_fwd"
+             onmouseover="addClass('g<_gallery|id>_nf','g_basic_nav_h')"
+             onmouseout="delClass('g<_gallery|id>_nf','g_basic_nav_h')"
+             onclick="gNav('g<_gallery|id>',1)">
+        </div>-->
+
+        <!--<div class="caption-container">
+            <p id="caption"></p>
+        </div>-->
+
+        <_thumbs|begin>
+
+        <div id="g<_gallery|id>_t<_thumb|id>" class="g_basic_t g_basic_t_<_thumb|new>"
+             onmouseover="addClass('g<_gallery|id>_t<_thumb|id>','g_hover')"
+             onmouseout="delClass('g<_gallery|id>_t<_thumb|id>','g_hover')"
+             onclick="gDisplayImg('g<_gallery|id>',<_thumb|id>)"
+        >
+
+            <div class="g_basic_ti" style="background: #e0e0e0 url('<_thumb|url>') no-repeat center center;"></div>
+        </div>
+        <!--<div class="glb_column">
+            <img src="<_thumb|url>" onclick="gDisplayImg(<_gallery|id>,<_thumb|id>)">
+        </div>-->
+
+        <_thumbs|end>
+    </div>
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------
+<div class="center embedded_container g_basic_f">
+
+    <div id="g<_gallery|id>" class="g_basic_d">
+        <div class="g_basic_di">
+            <a id="g<_gallery|id>_a" href="<_image|full>" target="_blank" title="Click to view image in full screen"><img id="g<_gallery|id>_img" src="<_image|url>" alt="Click to view image in full screen" class="scale_image g_basic_i"/></a>
+        </div>
+
+        <div id="g<_gallery|id>_nb" class="g_basic_nav_back"
+             onmouseover="addClass('g<_gallery|id>_nb','g_basic_nav_h')"
+             onmouseout="delClass('g<_gallery|id>_nb','g_basic_nav_h')"
+             onclick="gNav('g<_gallery|id>',-1)">
+        </div>
+
+        <div id="g<_gallery|id>_nf" class="g_basic_nav_fwd"
+             onmouseover="addClass('g<_gallery|id>_nf','g_basic_nav_h')"
+             onmouseout="delClass('g<_gallery|id>_nf','g_basic_nav_h')"
+             onclick="gNav('g<_gallery|id>',1)">
+        </div>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <_thumbs|begin>
+
+    <div id="g<_gallery|id>_t<_thumb|id>" class="g_basic_t g_basic_t_<_thumb|new>"
+         onmouseover="addClass('g<_gallery|id>_t<_thumb|id>','g_hover')"
+         onmouseout="delClass('g<_gallery|id>_t<_thumb|id>','g_hover')"
+         onclick="gDisplayImg('g<_gallery|id>',<_thumb|id>)"
+    >
+
+        <div class="g_basic_ti" style="background: #e0e0e0 url('<_thumb|url>') no-repeat center center;"></div>
+    </div>
+
+    <_thumbs|end>
+
+</div>
+-->
