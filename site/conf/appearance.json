@@ -10,7 +10,7 @@
 	"allow registration": true,
 
 	// minify output HTML - desktop / mobile
-	"minify desktop html": false,
+	"minify desktop html": true,
 	"minify mobile html": true,
 
 	// application for minification || blank == don't minify.

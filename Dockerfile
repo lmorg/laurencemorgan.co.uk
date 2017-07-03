@@ -17,12 +17,12 @@ RUN sass scss/desktop.scss layout/desktop.css
 RUN sass scss/mobile.scss  layout/mobile.css
 
 # Minimize
-#RUN mv layout/interactive.js layout/interactive-h.js && yui-compressor -o layout/interactive.js layout/interactive-h.js
-#RUN mv layout/desktop.css    layout/desktop-h.css    && yui-compressor -o layout/desktop.css    layout/desktop-h.css
-#RUN mv layout/mobile.css     layout/mobile-h.css     && yui-compressor -o layout/mobile.css     layout/mobile-h.css
+RUN mv layout/interactive.js layout/interactive-h.js && yui-compressor -o layout/interactive.js layout/interactive-h.js
+RUN mv layout/desktop.css    layout/desktop-h.css    && yui-compressor -o layout/desktop.css    layout/desktop-h.css
+RUN mv layout/mobile.css     layout/mobile-h.css     && yui-compressor -o layout/mobile.css     layout/mobile-h.css
 
 # Make the site read-only aside the uploads path
-#RUN chmod -R ugo-w /go/src/github.com/lmorg/laurencemorgan.co.uk
+RUN chmod -R ugo-w /go/src/github.com/lmorg/laurencemorgan.co.uk
 
 # Define web server
 USER lvl10
