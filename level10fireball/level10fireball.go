@@ -438,7 +438,7 @@ func writeBody(session *Session) {
 }
 
 func writeHeaders(session *Session) {
-	session.w.Header().Set("CachCachCacheeCachee-Control", fmt.Sprintf("max-age=%d", CORE_CACHE_CONTROL))
+	session.w.Header().Set("Cache-Control", fmt.Sprintf("max-age=%d", CORE_CACHE_CONTROL))
 	session.w.Header().Set("Content-Language", session.Language)
 	session.w.Header().Set("Server", "Level 10 Fireball")
 	session.w.Header().Set("X-Powered-By", "Late nights and lot's of Scotch")
