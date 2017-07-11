@@ -165,8 +165,22 @@ func facebookLogin(session *Session) string {
 		return ""
 	}
 
-	user.Name.Full.Value, _ = parseIface(json_values["name"], "name")
+	user.Name.Full.Value, err = parseIface(json_values["name"], "name")
 	user.Name.First.Value, _ = parseIface(json_values["first_name"], "first_name")
+
+	switch {
+	case user.Name.Full.Value == "" && user.Name.First.Value == "":
+		facebookLoginFailed(session, "First name and full name could not be identified from Facebook.", err)
+	case user.Name.Full.Value == "":
+		user.Name.Full.Value = user.Name.First.Value
+	case user.Name.First.Value == "":
+		split := strings.Split(user.Name.Full.Value, " ")
+		if len(split) == 0 {
+			user.Name.First.Value = user.Name.Full.Value
+		} else {
+			user.Name.First.Value = split[0]
+		}
+	}
 
 	/*user.Facebook.ID = json_values["id"].(string)
 	//user.Facebook.URL = json_values["link"].(string) //TODO: do i really need this since I'm not actually storing it in the DB?
