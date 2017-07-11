@@ -448,9 +448,6 @@ func writeHeaders(session *Session) {
 	if strings.Contains(session.r.Header.Get("Accept-Encoding"), "gzip") && session.Status == 200 {
 		session.w.Header().Set("Content-Encoding", "gzip")
 	}
-	//session.w.Header().Set("Connection", "close")
-	//session.w.Header().Set("Vary", "Accept-Encoding")
-	//session.w.Header().Set("Transfer-Encoding", "chunked")
 	session.w.Header().Set("Content-Type", "text/html; charset=utf-8")
 }
 

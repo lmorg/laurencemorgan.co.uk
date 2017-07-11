@@ -49,9 +49,12 @@ i {
 }
 
 #articledate {
-	font-style: italic;
+	//font-style: italic;
 	font-weight: lighter;
-	font-size: 12px;
+	font-size: 10px;
+	//color: #707380;
+	color: #C0C3D0;
+	text-shadow: 1px 1px 1px #61a461;
 }
 
 .error {
