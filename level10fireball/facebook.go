@@ -3,6 +3,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -104,7 +105,12 @@ func facebookLogin(session *Session) string {
 			err := json.Unmarshal(http_body, &json_interface)
 			if err == nil {
 				json_values = json_interface.(map[string]interface{})
-				user.Facebook.AccessToken = json_values["access_token"].(string)
+				switch t := json_values["access_token"].(type) {
+				case string:
+					user.Facebook.AccessToken = json_values["access_token"].(string)
+				default:
+					debugLog("Facebook login token parsing failed: json_values[\"access_token\"].(type) == ", t)
+				}
 			}
 			// this is a bit of a cheap trick, but it saves writing a bespoke parser
 			//token, err = url.Parse("/url/?" + string(http_body))
@@ -137,12 +143,35 @@ func facebookLogin(session *Session) string {
 	}
 
 	// parse the first json file
+	parseIface := func(iface interface{}, key string) (val string, err error) {
+		switch t := iface.(type) {
+		case string:
+			val = iface.(string)
+		default:
+			s := fmt.Sprint("JSON parameter not string: json_values[\""+key+"\"].(type) == ", t)
+			err = errors.New(s)
+			debugLog(s)
+			debugLog(string(http_body))
+		}
+		return
+	}
+
 	json.Unmarshal(http_body, &json_interface)
 	json_values = json_interface.(map[string]interface{})
-	user.Facebook.ID = json_values["id"].(string)
+
+	user.Facebook.ID, err = parseIface(json_values["id"], "id")
+	if err != nil {
+		facebookLoginFailed(session, "Unable to parse data returned from Facebook.", err)
+		return ""
+	}
+
+	user.Name.Full.Value, _ = parseIface(json_values["name"], "name")
+	user.Name.First.Value, _ = parseIface(json_values["first_name"], "first_name")
+
+	/*user.Facebook.ID = json_values["id"].(string)
 	//user.Facebook.URL = json_values["link"].(string) //TODO: do i really need this since I'm not actually storing it in the DB?
 	user.Name.First.Value = json_values["first_name"].(string)
-	user.Name.Full.Value = json_values["name"].(string)
+	user.Name.Full.Value = json_values["name"].(string)*/
 
 	////////////////////////////////////////////////////////////////////////////
 	// get profile picture
