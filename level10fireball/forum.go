@@ -3,8 +3,8 @@ package main
 
 import (
 	"fmt"
-	"html"
 	"github.com/lmorg/laurencemorgan.co.uk/level10fireball/fmtd"
+	"html"
 	"math"
 	"strconv"
 	"strings"
@@ -672,7 +672,7 @@ var fnThreadModels = map[string]func(*Session, uint, uint){
 
 			if parent_id == c.ID {
 				session.Page.Content += fmt.Sprintf(`<div class="c_less_prev">↖ Comment from <a href="%s#comment%d" title="%s">previous page</a>:</div>`,
-					getReferrer(session), c.ParentID, session.Page.Section.Title.HTMLEscaped()) // TODO: this is a terrible implimentation. fix so it doesn't use cookies!
+					getReferrer(session), c.ParentID, session.Page.Section.Title.HTMLEscaped()) // TODO: this is a terrible implementation. fix so it doesn't use cookies!
 				session.Page.Content += *forumComment(session, &c, "threaded1", cnew)
 				session.Page.Content += `<div class="c_less_cont">↘ Discussion continued:</div>`
 			}

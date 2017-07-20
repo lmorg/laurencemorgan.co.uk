@@ -17,7 +17,7 @@ import (
 const (
 	CMS_NAME      string = "Level 10 Fireball"
 	CMS_URL       string = "https://laurencemorgan.co.uk"
-	CMS_VERSION   string = "1.6.5211 ALPHA"
+	CMS_VERSION   string = "1.6.5212 ALPHA"
 	CMS_COPYRIGHT string = "© Laurence 2012-2017"
 )
 
@@ -508,7 +508,8 @@ func loadEnvironmentFromDB(layout *Layout) {
 	//layout.nCommentsThreadedPerPage = 15
 	layout.nCommentsFlatPerPage = 20
 	layout.nCharsMobileBreadcrumbs = 18
-	layout.ArticleAppendComments = COMMENTS_HIGHLIGHTS //TODO: I need to test COMMENTS_ALL works
+	//layout.ArticleAppendComments = COMMENTS_HIGHLIGHTS //TODO: I need to test COMMENTS_ALL works
+	layout.ArticleAppendComments = COMMENTS_ALL
 	layout.xEmbeddedFrame = 800
 	layout.yEmbeddedFrame = 600
 	layout.nForumRowsColours = 2

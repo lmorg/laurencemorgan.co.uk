@@ -4,8 +4,8 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"html"
 	"github.com/lmorg/laurencemorgan.co.uk/level10fireball/fmtd"
+	"html"
 	"math"
 	"math/rand"
 	"net/http"
@@ -262,7 +262,7 @@ func pageArticle(session *Session) {
 
 		if session.Thread.ID > 0 {
 
-			// I want this to apear above /and/ below the comments
+			// I want this to appear above /and/ below the comments
 			var comment_summary string
 			if n_comments == 0 {
 				comment_summary = "<p>There are no comments attached to this article. Why not be the first?</p>"
