@@ -23,7 +23,9 @@
 #menubar {
 	font-size:15px;
 	clear:both;
-	font-weight: bolder;
+	//font-weight: bolder;
+	font-weight: normal;
+	font-family: $font-headings;
 	//text-shadow: 1px 1px 2px $color-link;
 	-webkit-font-smoothing: antialiased;
 	/*font-smooth: always;*/

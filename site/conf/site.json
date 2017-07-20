@@ -3,7 +3,7 @@
 	"name":		"Laurence Morgan",
 	"description":	"The unsorted inane drivelings of the aforementioned",
 	"copyright":	"© Laurence 2012-2017",
-	"version":	"3.7.22",
+	"version":	"3.7.24",
 	
 	// best practice, listen on localhost, and then forward requests via Apache reverse proxy or load balancer
 	"host":		"0.0.0.0",
